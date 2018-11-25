@@ -1,0 +1,15 @@
+    //禁止屏幕滚动 使用方法 stopBodyScroll(true); 
+    var _bodyElement = document.body;
+    var _scrollTop = 0;
+
+    function stopBodyScroll (isFixed) {
+      if (isFixed) {
+        _scrollTop = window.scrollY;
+        _bodyElement.style.position = 'fixed';
+        _bodyElement.style.top = -_scrollTop + 'px';
+      } else {
+        _bodyElement.style.position = '';
+        _bodyElement.style.top = '';
+        window.scrollTo(0, _scrollTop);
+      }
+    }
